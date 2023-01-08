@@ -8,7 +8,6 @@ import 'package:letutor/ui/main_app.dart';
 import 'ui/login/login.dart';
 
 void main() async {
-  // runApp(const MyApp());
   WidgetsFlutterBinding.ensureInitialized();
 
   HttpOverrides.global = MyHttpOverrides();
