@@ -50,7 +50,7 @@ class TeacherDetailComponent extends StatelessWidget {
         ListSelectionComponent(
           title: TitleString.interests,
           child: Text(
-            'Quan dz',
+            'Trương Quốc Vương',
             style: text15.copyWith(color: Colors.grey),
           ),
         ),
@@ -60,7 +60,7 @@ class TeacherDetailComponent extends StatelessWidget {
         ListSelectionComponent(
           title: TitleString.tutorDetailExample,
           child: Text(
-            'Quan dz',
+            'Trương Quốc Vương',
             style: text15.copyWith(color: Colors.grey),
           ),
         ),

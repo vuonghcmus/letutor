@@ -152,7 +152,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                       child: Row(
                         children: [
                           Text(
-                            'Quan dz',
+                            'Trương Quốc Vương',
                             style: text14.copyWith(fontWeight: FontWeight.w600),
                             textAlign: TextAlign.center,
                           ),

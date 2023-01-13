@@ -28,7 +28,7 @@ class TeacherInformationComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Quan dz',
+                      'Trương Quốc Vương',
                       style: text20.copyWith(fontWeight: FontWeight.w600),
                     ),
                     SizedBox(
@@ -104,5 +104,4 @@ class TeacherInformationComponent extends StatelessWidget {
       ),
     );
   }
-
 }

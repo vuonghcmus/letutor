@@ -16,7 +16,7 @@ class HeaderProfileComponent extends StatelessWidget {
         children: [
           LogoProfileComponent(),
           Text(
-            "Quan dz",
+            "Trương Quốc Vương",
             style: text28.copyWith(
                 color: const Color.fromRGBO(36, 38, 38, 1.0),
                 fontWeight: FontWeight.w700),

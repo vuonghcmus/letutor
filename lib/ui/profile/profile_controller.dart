@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../base/base_controller.dart';
 
-class ProfileController extends BaseController{
+class ProfileController extends BaseController {
   static const String nameField = 'nameField';
   static const String emailField = 'emailField';
   static const String countryField = 'countryField';
@@ -22,7 +22,7 @@ class ProfileController extends BaseController{
       // wantToLearnField,
       studyScheduleField,
     ].map(
-          (value) => MapEntry(
+      (value) => MapEntry(
         value,
         TextEditingController(),
       ),
@@ -38,8 +38,8 @@ class ProfileController extends BaseController{
   void onReloadData() {}
 
   void setUpDataProfile() {
-    controllers[nameField]?.text = 'Quan dz';
-    controllers[emailField]?.text = 'quandz@lettutor.com';
+    controllers[nameField]?.text = 'Trương Quốc Vương';
+    controllers[emailField]?.text = 'Trương Quốc Vương@lettutor.com';
     controllers[countryField]?.text = 'Viet Nam';
     controllers[phoneField]?.text = '0343681753';
     controllers[birthayDayField]?.text = '2001-04-24';

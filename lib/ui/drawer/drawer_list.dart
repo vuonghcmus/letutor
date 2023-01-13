@@ -35,7 +35,7 @@ class DrawerList extends GetWidget<DrawerListController> {
                       width: 15,
                     ),
                     Text(
-                      "Quan dz",
+                      "Trương Quốc Vương",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
