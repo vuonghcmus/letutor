@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
-import '../../../config/app_pages.dart';
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../../resources/gen/assets.gen.dart';

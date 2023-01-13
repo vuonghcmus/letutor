@@ -1,6 +1,7 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:letutor/config/app_pages.dart';
 import 'package:letutor/ui/profile/profile_controller.dart';
 
@@ -10,7 +11,7 @@ import '../../common/text_form_field_custom_component.dart';
 import 'field_infor_person.dart';
 
 class ProfileDetailComponent extends StatelessWidget {
-  ProfileDetailComponent({super.key, required this.controller});
+  const ProfileDetailComponent({super.key, required this.controller});
 
   final ProfileController controller;
 
@@ -28,7 +29,7 @@ class ProfileDetailComponent extends StatelessWidget {
                 controller: controller.controllers[ProfileController.nameField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.email,
             isImportant: true,
@@ -38,7 +39,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     controller.controllers[ProfileController.emailField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.country,
             isImportant: true,
@@ -48,7 +49,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     controller.controllers[ProfileController.countryField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.phoneNumber,
             isImportant: true,
@@ -58,7 +59,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     controller.controllers[ProfileController.phoneField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.birthday,
             isImportant: true,
@@ -68,7 +69,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     controller.controllers[ProfileController.birthayDayField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.level,
             isImportant: true,
@@ -78,7 +79,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     controller.controllers[ProfileController.levelField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.wantToLearn,
             isImportant: true,
@@ -88,7 +89,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     controller.controllers[ProfileController.wantToLearnField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FieldInforPerson(
             title: TitleString.schedule,
             isImportant: true,
@@ -98,7 +99,7 @@ class ProfileDetailComponent extends StatelessWidget {
                     .controllers[ProfileController.studyScheduleField],
                 hintText: ''),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Center(
             child: ButtonCustomComponent(
               title: TitleString.confirm,

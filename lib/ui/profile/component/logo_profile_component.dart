@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../resources/gen/assets.gen.dart';
 import '../../common/circle_box.dart';
 
 class LogoProfileComponent extends StatelessWidget {
+  const LogoProfileComponent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -18,7 +18,7 @@ class LogoProfileComponent extends StatelessWidget {
           top: 90,
           child: CircleBox(
             size: 50,
-            child: Icon(
+            child: const Icon(
               Icons.edit,
               size: 30,
               color: Colors.blue,

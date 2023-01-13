@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+// ignore_for_file: must_be_immutable, avoid_unnecessary_containers
 
+import 'package:flutter/material.dart';
 import '../../../resources/font/font_text.dart';
-import '../../common/text_form_field_custom_component.dart';
 
 class FieldInforPerson extends StatelessWidget {
   String title;
@@ -27,7 +26,7 @@ class FieldInforPerson extends StatelessWidget {
                 style: text14,
                 textAlign: TextAlign.start,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 1,
               ),
               if (isImportant)
