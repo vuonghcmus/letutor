@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 Widget ListTitleComponent(
     {required IconData iconData,
@@ -20,12 +20,12 @@ Widget ListTitleComponent(
           color: Colors.blue,
           size: 50,
         ),
-        SizedBox(
+        const SizedBox(
           width: 15,
         ),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),

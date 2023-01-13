@@ -1,8 +1,7 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:letutor/config/app_pages.dart';
 import 'package:letutor/ui/common/box_shadow_component.dart';
 
@@ -25,7 +24,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Center(
@@ -42,7 +41,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SubCourseDetailComponent(
@@ -53,7 +52,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                   content:
                       'Our world is rapidly changing thanks to new technology, and the vocabulary needed to discuss modern life is evolving almost daily. In this course you will learn the most up-to-date terminology from expertly crafted lessons as well from your native-speaking tutor.',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 OverviewDetailCourse(
@@ -63,7 +62,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SubCourseDetailComponent(
@@ -71,8 +70,8 @@ class CourseDetail extends GetWidget<CourseDetailController> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.person_add_alt_1_sharp),
-                    SizedBox(
+                    const Icon(Icons.person_add_alt_1_sharp),
+                    const SizedBox(
                       width: 10,
                     ),
                     Text(
@@ -83,7 +82,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SubCourseDetailComponent(
@@ -91,8 +90,8 @@ class CourseDetail extends GetWidget<CourseDetailController> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.topic),
-                    SizedBox(
+                    const Icon(Icons.topic),
+                    const SizedBox(
                       width: 10,
                     ),
                     Text(
@@ -103,30 +102,30 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SubCourseDetailComponent(
               title: TitleString.topicList,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Column(
                     children: [
                       ...[1, 2, 3, 4, 5].map(
                         (e) => BoxShadowComponent(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           width: double.infinity,
                           child: Column(
                             children: [
                               Text(
-                                e.toString() + '.',
+                                '$e.',
                                 style: text14.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: Colors.black),
                               ),
                               Text(
-                                'Topic ' + e.toString(),
+                                'Topic $e',
                                 style: text14.copyWith(
                                     fontWeight: FontWeight.w600),
                                 textAlign: TextAlign.center,
@@ -140,7 +139,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SubCourseDetailComponent(
@@ -149,7 +148,7 @@ class CourseDetail extends GetWidget<CourseDetailController> {
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(
                         children: [
                           Text(

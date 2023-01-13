@@ -14,27 +14,27 @@ class OverviewDetailCourse extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(Icons.info_outline),
-            SizedBox(
+            const Icon(Icons.info_outline),
+            const SizedBox(
               width: 10,
             ),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Text(
             content,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
             ),

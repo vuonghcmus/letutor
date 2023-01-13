@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/cupertino.dart';
 
 class SubCourseDetailComponent extends StatelessWidget {
@@ -14,16 +16,16 @@ class SubCourseDetailComponent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.w700,
                 decoration: TextDecoration.underline),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         ...children

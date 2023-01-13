@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import '../../../resources/font/font_text.dart';
@@ -22,11 +23,11 @@ class CourseItemPreview extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         image,
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,14 +35,14 @@ class CourseItemPreview extends StatelessWidget {
                 mainTitle,
                 style: text16.copyWith(fontWeight: FontWeight.w700),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 subTitle,
                 style: text14.copyWith(color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               bottomWidget,

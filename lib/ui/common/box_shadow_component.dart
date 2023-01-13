@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 
 class BoxShadowComponent extends StatelessWidget {
   Widget child;
@@ -26,8 +24,8 @@ class BoxShadowComponent extends StatelessWidget {
       onTap: onTap,
       child: Container(
           width: width,
-          margin: EdgeInsets.symmetric(horizontal: 2),
-          padding: padding ?? EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 2),
+          padding: padding ?? const EdgeInsets.only(bottom: 20),
           decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
