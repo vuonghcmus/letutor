@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../config/app_pages.dart';
 import '../../../constants/title_string.dart';
@@ -29,10 +29,10 @@ class InformationTeacherComponent extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 3),
+          padding: const EdgeInsets.symmetric(horizontal: 3),
           child: BoxShadowComponent(
-              padding: EdgeInsets.all(30),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              padding: const EdgeInsets.all(30),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
               width: Get.width - 20 - 6,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,27 +43,27 @@ class InformationTeacherComponent extends StatelessWidget {
                       child: Assets.images.vietnam.image(fit: BoxFit.cover),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
                     'Viet Nam',
                     style: text20.copyWith(fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
                     children: [
                       Assets.svg.vietnam.svg(height: 15, width: 25),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                       Text(
                         'Viet Nam',
                         style: text16,
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   countRating == 0
@@ -88,7 +88,7 @@ class InformationTeacherComponent extends StatelessWidget {
                           ),
                           onRatingUpdate: (rating) {},
                         ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Wrap(
@@ -104,7 +104,7 @@ class InformationTeacherComponent extends StatelessWidget {
                           .toList()
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   Align(
@@ -123,16 +123,16 @@ class InformationTeacherComponent extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                 ],
               )),
         ),
-        Positioned(
+        const Positioned(
             right: 30,
             top: 30,
-            child: const Icon(
+            child: Icon(
               Icons.favorite,
               color: Colors.red,
               size: 25,

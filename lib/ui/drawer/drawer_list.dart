@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../config/app_pages.dart';
 import '../../constants/title_string.dart';
@@ -31,10 +30,10 @@ class DrawerList extends GetWidget<DrawerListController> {
                 child: Row(
                   children: [
                     CircleBox(size: 50, child: Assets.images.vietnam.image()),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
-                    Text(
+                    const Text(
                       "Trương Quốc Vương",
                       style: TextStyle(
                         fontSize: 20,

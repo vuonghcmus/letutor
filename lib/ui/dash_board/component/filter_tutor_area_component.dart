@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../common/text_container_component.dart';
-import '../../common/text_field_area_component.dart';
 import '../../common/text_form_field_custom_component.dart';
 import '../dash_board_list_controller.dart';
 
@@ -25,11 +22,10 @@ class FilterTutorArea extends StatelessWidget {
       children: [
         Text(
           TitleString.dashBoardFindTutor,
-          style: text28.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.w700),
+          style:
+              text28.copyWith(color: Colors.black, fontWeight: FontWeight.w700),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
@@ -40,25 +36,25 @@ class FilterTutorArea extends StatelessWidget {
               controller: null,
               hintText: TitleString.dashBoardEnterTutorName),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
           width: Get.width / 2 - 25,
-          child:  TextFormFieldCustomComponent(
+          child: TextFormFieldCustomComponent(
               radius: 20,
               onChanged: (value) {},
               controller: null,
               hintText: TitleString.dashBoardSelectTutorNation),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Text(
           TitleString.dashBoardSelectAvailableTime,
           style: text16.copyWith(fontWeight: FontWeight.w600),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
@@ -69,18 +65,19 @@ class FilterTutorArea extends StatelessWidget {
               controller: null,
               hintText: TitleString.dashBoardSelectDay),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
           width: Get.width / 4 * 3,
-          child : TextFormFieldCustomComponent(
+          child: TextFormFieldCustomComponent(
               radius: 20,
               onChanged: (value) {},
               controller: null,
-              hintText:  '${TitleString.dashBoardStartTime} -> ${TitleString.dashBoardEndTime}'),
+              hintText:
+                  '${TitleString.dashBoardStartTime} -> ${TitleString.dashBoardEndTime}'),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Wrap(
@@ -94,14 +91,14 @@ class FilterTutorArea extends StatelessWidget {
                 .toList()
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         TextContainerComponent(
           title: TitleString.dashBoardResetFilter,
           color: Colors.white,
-          borderColor: Color.fromRGBO(1, 80, 245, 0.5019607843137255),
-          textColor: Color.fromRGBO(1, 80, 245, 0.5019607843137255),
+          borderColor: const Color.fromRGBO(1, 80, 245, 0.5019607843137255),
+          textColor: const Color.fromRGBO(1, 80, 245, 0.5019607843137255),
         )
       ],
     );

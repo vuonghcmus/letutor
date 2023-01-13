@@ -1,8 +1,8 @@
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+// ignore_for_file: override_on_non_overriding_member
 
 import '../base/base_controller.dart';
 
-class DashBoardListController extends BaseController{
+class DashBoardListController extends BaseController {
   final listType = [
     'All',
     'English for kids',
@@ -16,6 +16,7 @@ class DashBoardListController extends BaseController{
   void onInit() {
     super.onInit();
   }
+
   @override
   void onReloadData() {}
 }

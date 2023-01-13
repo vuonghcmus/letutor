@@ -23,7 +23,7 @@ class Courses extends GetWidget<CoursesController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HeaderCoursesComponent(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Text(
@@ -31,19 +31,18 @@ class Courses extends GetWidget<CoursesController> {
               style: text15.copyWith(
                   color: Colors.black, fontWeight: FontWeight.w400),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             //search courses
             SearchCoursesComponent(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TabCourseView(controller: controller),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-
           ],
         ),
       ),

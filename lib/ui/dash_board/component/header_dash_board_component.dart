@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/title_string.dart';
@@ -13,8 +12,8 @@ class HeaderDashBoardComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      decoration: const BoxDecoration(
           color: Colors.indigo,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
@@ -28,7 +27,7 @@ class HeaderDashBoardComponent extends StatelessWidget {
             style: text28.copyWith(
                 fontWeight: FontWeight.w700, color: Colors.white),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Wrap(
@@ -41,12 +40,11 @@ class HeaderDashBoardComponent extends StatelessWidget {
               ),
               Text(
                 '(còn 08:51:34)',
-                style: text16.copyWith(
-                    color: Colors.amber),
+                style: text16.copyWith(color: Colors.amber),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Text(
@@ -54,14 +52,15 @@ class HeaderDashBoardComponent extends StatelessWidget {
             textAlign: TextAlign.center,
             style: text18.copyWith(color: Colors.white),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
-            child: TextButton(onPressed: () {  }, child: Text(TitleString.dashBoardEnterRoom),
-              
-                ),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: TextButton(
+              onPressed: () {},
+              child: Text(TitleString.dashBoardEnterRoom),
+            ),
           ),
         ],
       ),
