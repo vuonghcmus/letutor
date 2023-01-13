@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../common/list_selection_component.dart';
@@ -10,7 +8,7 @@ import '../teacher_detail_controller.dart';
 class TeacherDetailComponent extends StatelessWidget {
   final TeacherDetailController controller;
 
-  TeacherDetailComponent({super.key, required this.controller});
+  const TeacherDetailComponent({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class TeacherDetailComponent extends StatelessWidget {
             textColor: Colors.black,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         ListSelectionComponent(
@@ -44,7 +42,7 @@ class TeacherDetailComponent extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         ListSelectionComponent(
@@ -54,7 +52,7 @@ class TeacherDetailComponent extends StatelessWidget {
             style: text15.copyWith(color: Colors.grey),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         ListSelectionComponent(

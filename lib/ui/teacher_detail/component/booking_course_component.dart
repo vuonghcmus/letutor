@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
@@ -23,7 +23,7 @@ class BookingCourseComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BoxShadowComponent(
       width: Get.width,
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
