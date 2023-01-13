@@ -1,13 +1,13 @@
+// ignore_for_file: constant_identifier_names, depend_on_referenced_packages
+
 import 'package:get_storage/get_storage.dart';
 
 import '../resources/languages/localization_service.dart';
-import '../resources/theme/theme_service.dart';
 
 class AppStorage {
   late GetStorage box;
   static const STORAGE_NAME = "lettutor_storage";
   static const APP_LANGUAGE = "app_language";
-  // static const APP_THEME = "app_theme";
 
   init() async {
     await GetStorage.init(STORAGE_NAME);
@@ -22,13 +22,4 @@ class AppStorage {
     final language = await box.read(APP_LANGUAGE) ?? LocalizationService.VI_VN;
     return language;
   }
-
-  // Future<void> setTheme(int theme) async {
-  //   box.write(APP_THEME, theme);
-  // }
-
-  // Future<int> getTheme() async {
-  //   final theme = await box.read(APP_THEME) ?? ThemeService.LIGHT_THEME;
-  //   return theme;
-  // }
 }

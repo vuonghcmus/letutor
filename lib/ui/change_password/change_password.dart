@@ -1,5 +1,6 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:letutor/ui/change_password/change_password_controller.dart';
 
@@ -10,6 +11,8 @@ import '../common/button_custom_component.dart';
 import '../common/text_field_area_component.dart';
 
 class ChangePassword extends GetWidget<ChangePasswordController> {
+  const ChangePassword({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

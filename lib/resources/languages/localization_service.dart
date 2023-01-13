@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:ui';
 
 import 'package:get/get.dart';
@@ -41,8 +43,6 @@ class LocalizationService extends Translations {
     await appStorage.setLanguage(value);
     if (getLocale != null) {
       Get.updateLocale(getLocale!);
-
     }
   }
 }
-

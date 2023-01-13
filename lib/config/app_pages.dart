@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../ui/change_password/change_password.dart';
@@ -41,15 +43,15 @@ class AppPages {
   static final pages = <GetPage>[
     GetPage(
         name: AppRoutes.LOGIN,
-        page: () => Login(),
+        page: () => const Login(),
         binding: LoginPageBinding()),
     GetPage(
         name: AppRoutes.REGISTER,
-        page: () => Register(),
+        page: () => const Register(),
         binding: RegisterBinding()),
     GetPage(
         name: AppRoutes.FORGOT_PASSWORD,
-        page: () => ForgotPassword(),
+        page: () => const ForgotPassword(),
         binding: ForgotPasswordBinding()),
     GetPage(
         name: AppRoutes.DASH_BOARD_LIST,
@@ -61,11 +63,11 @@ class AppPages {
         binding: TeacherDetailBinding()),
     GetPage(
         name: AppRoutes.DRAWER,
-        page: () => DrawerList(),
+        page: () => const DrawerList(),
         binding: DrawerListBinding()),
     GetPage(
         name: AppRoutes.CHANGE_PASSWORD,
-        page: () => ChangePassword(),
+        page: () => const ChangePassword(),
         binding: ChangePasswordBinding()),
     GetPage(
         name: AppRoutes.PROFILE,

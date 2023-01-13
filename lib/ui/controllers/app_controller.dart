@@ -1,13 +1,9 @@
-
-import 'dart:ui';
-
+// ignore_for_file: unused_local_variable
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../config/app_storage.dart';
 import '../../resources/languages/localization_service.dart';
-import '../../resources/theme/app_theme.dart';
-import '../../resources/theme/theme_service.dart';
 
 class AppController extends GetxController {
   late Rx<Locale?> locale;
@@ -16,9 +12,6 @@ class AppController extends GetxController {
   init() async {
     await Future.wait([initStorage()]);
     final appStorage = Get.find<AppStorage>();
-
-    // setupApp();
-    // await initTheme(appStorage);
     await initLanguage();
   }
 
@@ -34,25 +27,9 @@ class AppController extends GetxController {
     // Listen to the change of locale
     localeService.appStorage.box.listenKey(AppStorage.APP_LANGUAGE, (value) {
       if (value != null) {
-
         final newLocale = Locale(value);
         locale.value = newLocale;
       }
     });
   }
-
-  // Future<void> initTheme(AppStorage storage) async {
-  //   await Get.put(ThemeService()).init(storage);
-  //   final themeService = Get.find<ThemeService>();
-  //   themeData = themeService.themeData.obs;
-  //
-  //   // Listen to the change of Theme
-  //   storage.box.listenKey(AppStorage.APP_THEME, (value) {
-  //     if (value != null) {
-  //       themeData.value = appThemeData[themeService.getAppTheme(value)];
-  //     } else {
-  //       themeData = appThemeData[themeService.getAppTheme(value)].obs;
-  //     }
-  //   });
-  // }
 }
