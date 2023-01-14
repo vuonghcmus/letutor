@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/cupertino.dart';
 
 import '../../resources/font/font_text.dart';
@@ -23,11 +21,11 @@ class ListSelectionComponent extends StatelessWidget {
           title,
           style: text18.copyWith(fontWeight: FontWeight.w700),
         ),
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 15.0),
+          padding: EdgeInsets.only(left: 15.0),
           child: child,
         )
       ],

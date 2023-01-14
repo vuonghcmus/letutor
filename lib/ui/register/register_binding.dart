@@ -7,3 +7,10 @@ class RegisterBinding extends Bindings {
     Get.lazyPut<RegisterController>(() => RegisterController());
   }
 }
+
+class RegisterBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<RegisterController>(() => RegisterController());
+  }
+}

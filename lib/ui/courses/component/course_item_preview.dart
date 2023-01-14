@@ -1,21 +1,3 @@
-// ignore_for_file: must_be_immutable
-
-import 'package:flutter/material.dart';
-
-import '../../../resources/font/font_text.dart';
-
-class CourseItemPreview extends StatelessWidget {
-  Widget image;
-  String mainTitle;
-  String subTitle;
-  Widget bottomWidget;
-  CourseItemPreview({
-    Key? key,
-    required this.image,
-    required this.mainTitle,
-    required this.subTitle,
-    required this.bottomWidget,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +5,11 @@ class CourseItemPreview extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         image,
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,14 +17,14 @@ class CourseItemPreview extends StatelessWidget {
                 mainTitle,
                 style: text16.copyWith(fontWeight: FontWeight.w700),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
               Text(
                 subTitle,
                 style: text14.copyWith(color: Colors.grey),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 15,
               ),
               bottomWidget,
