@@ -8,6 +8,11 @@ String readTimestamp(int timestamp) {
   return '${DateFormat('dd/MM/yyyy').format(date)}-${weekDay[date.weekday]!}';
 }
 
+DateTime readTimestamp11(int timestamp) {
+  var date = DateTime.fromMillisecondsSinceEpoch(timestamp);
+  return date;
+}
+
 bool isBeforeNow(int timestamp) {
   var date = DateTime.fromMillisecondsSinceEpoch(timestamp);
   return date.isBefore(DateTime.now());
