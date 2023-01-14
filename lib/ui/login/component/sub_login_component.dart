@@ -1,13 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:letutor/ui/login/login_controller.dart';
+
+import '../../../config/app_pages.dart';
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../../resources/gen/assets.gen.dart';
 
 class SubLoginComponent extends StatelessWidget {
   final double sizeIcon = 40;
+  final LoginController controller;
 
-  const SubLoginComponent({Key? key, required this.titleBottom})
+  const SubLoginComponent(
+      {Key? key, required this.titleBottom, required this.controller})
       : super(key: key);
 
   final List<Widget> titleBottom;
@@ -30,20 +37,32 @@ class SubLoginComponent extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Assets.svg.facebookLogo.svg(width: sizeIcon, height: sizeIcon),
+            InkWell(
+              onTap: () {
+                controller.handleLogin(LoginType.facebook);
+              },
+              child: Assets.svg.facebookLogo
+                  .svg(width: sizeIcon, height: sizeIcon),
+            ),
             const SizedBox(width: 40),
-            Assets.svg.googleLogo.svg(width: sizeIcon, height: sizeIcon),
+            InkWell(
+                onTap: () {
+                  controller.handleLogin(LoginType.google);
+                },
+                child: Assets.svg.googleLogo
+                    .svg(width: sizeIcon, height: sizeIcon)),
             const SizedBox(width: 40),
             Assets.svg.mobileLogo.svg(width: sizeIcon, height: sizeIcon),
           ],
         ),
         const SizedBox(height: 20),
         Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: titleBottom,
-            )),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: titleBottom,
+          ),
+        ),
       ],
     );
   }
