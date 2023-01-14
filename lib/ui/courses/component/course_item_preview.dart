@@ -1,3 +1,20 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../../../resources/font/font_text.dart';
+
+class CourseItemPreview extends StatelessWidget {
+  Widget image;
+  String mainTitle;
+  String subTitle;
+  Widget bottomWidget;
+  CourseItemPreview({
+    Key? key,
+    required this.image,
+    required this.mainTitle,
+    required this.subTitle,
+    required this.bottomWidget,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
