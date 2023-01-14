@@ -22,6 +22,7 @@ TextStyle get text16 => fontApp.copyWith(fontSize: 16);
 TextStyle get text18 => fontApp.copyWith(fontSize: 18);
 
 TextStyle get text20 => fontApp.copyWith(fontSize: 20);
+TextStyle get text22 => fontApp.copyWith(fontSize: 22);
 
 TextStyle get text24 => fontApp.copyWith(fontSize: 24);
 

@@ -1,9 +1,10 @@
 import 'package:letutor/models/topic.dart';
 import 'package:intl/intl.dart';
+import 'package:letutor/models/tutor.dart';
+import 'package:letutor/models/wallet_info.dart';
 
 import '../utils/date_time.dart';
 import 'course.dart';
-
 
 class UserModel {
   int timezone;
@@ -24,12 +25,15 @@ class UserModel {
   bool isPhoneActivated;
   bool canSendMessage;
   bool isOnline;
+
   //language
   //walletInfo
   DateTime birthday;
   List<Topic> learnTopics;
   List<Topic> testPreparations;
   List<Course> courses;
+  Tutor? tutorInfo;
+  WalletInfo? walletInfo;
 
   UserModel({
     this.timezone = 7,
@@ -53,10 +57,13 @@ class UserModel {
     this.isPhoneActivated = false,
     this.canSendMessage = false,
     this.isOnline = false,
+    this.tutorInfo,
     required this.birthday,
+    this.walletInfo,
   });
 
   factory UserModel.fromJson(json) {
+    if (json == null) return UserModel(birthday: DateTime(1990));
     return UserModel(
       id: json['id'] ?? "",
       email: json['email'] ?? "",
@@ -78,13 +85,13 @@ class UserModel {
       learnTopics: json['learnTopics'] == null
           ? []
           : (json['learnTopics'] as List)
-          .map((e) => Topic.fromJson(e))
-          .toList(),
+              .map((e) => Topic.fromJson(e))
+              .toList(),
       testPreparations: json['testPreparations'] == null
           ? []
           : (json['testPreparations'] as List)
-          .map((e) => Topic.fromJson(e))
-          .toList(),
+              .map((e) => Topic.fromJson(e))
+              .toList(),
       isActivated: json['isActivated'] ?? false,
       isPhoneActivated: json['isPhoneActivated'] ?? false,
       canSendMessage: json['canSendMessage'] ?? false,
@@ -94,9 +101,14 @@ class UserModel {
       courses: json['courses'] == null
           ? []
           : (json['courses'] as List).map((e) => Course.fromJson(e)).toList(),
+      tutorInfo: (json['tutorInfo'] == null)
+          ? null
+          : Tutor.fromJson(json['tutorInfo']),
+      walletInfo: json['walletInfo'] == null
+          ? null
+          : WalletInfo.fromJson(json['walletInfo']),
     );
   }
-
 
   List<Topic> getListWantToLearn() => [...learnTopics, ...testPreparations];
 }
