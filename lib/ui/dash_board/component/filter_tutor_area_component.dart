@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:multi_select_flutter/util/multi_select_list_type.dart';
@@ -10,7 +10,6 @@ import '../../../constants/constants.dart';
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../common/text_container_component.dart';
-import '../../common/text_field_area_component.dart';
 import '../../common/text_form_field_custom_component.dart';
 import '../dash_board_list_controller.dart';
 
@@ -37,7 +36,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
           style:
               text28.copyWith(color: Colors.black, fontWeight: FontWeight.w700),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
@@ -48,13 +47,13 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
               controller: widget.controller.controllers[nameField],
               hintText: TitleString.dashBoardEnterTutorName),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
           width: Get.width / 2,
           child: MultiSelectDialogField(
-            initialValue: [],
+            initialValue: const [],
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
@@ -69,22 +68,22 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
                 .map((e) => MultiSelectItem(e, e))
                 .toList(),
             onConfirm: (values) {
-              values.forEach((element) {
+              for (var element in values) {
                 widget.controller.valueContriesSelected.add(element);
                 widget.controller.nationality[element] = true;
-              });
+              }
             },
             listType: MultiSelectListType.CHIP,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Text(
           TitleString.dashBoardSelectAvailableTime,
           style: text16.copyWith(fontWeight: FontWeight.w600),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
@@ -109,7 +108,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
             onChanged: (String) {},
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
@@ -120,7 +119,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
               showTimePicker(context: context, initialTime: TimeOfDay.now())
                   .then((value) => {
                         widget.controller.controllers[dateStartField]?.text =
-                            value?.format(context)?.tr ?? ""
+                            value?.format(context).tr ?? ""
                       });
             },
             readOnly: true,
@@ -129,7 +128,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
             onChanged: (String) {},
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         SizedBox(
@@ -140,7 +139,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
               showTimePicker(context: context, initialTime: TimeOfDay.now())
                   .then((value) => {
                         widget.controller.controllers[dateEndField]?.text =
-                            value?.format(context)?.tr ?? ""
+                            value?.format(context).tr ?? ""
                       });
             },
             readOnly: true,
@@ -149,7 +148,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
             onChanged: (String) {},
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Wrap(
@@ -163,7 +162,7 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
                 .toList()
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         InkWell(
@@ -175,8 +174,8 @@ class _FilterTutorAreaState extends State<FilterTutorArea> {
           child: TextContainerComponent(
             title: TitleString.dashBoardResetFilter,
             color: Colors.white,
-            borderColor: Color.fromRGBO(1, 80, 245, 0.5019607843137255),
-            textColor: Color.fromRGBO(1, 80, 245, 0.5019607843137255),
+            borderColor: const Color.fromRGBO(1, 80, 245, 0.5019607843137255),
+            textColor: const Color.fromRGBO(1, 80, 245, 0.5019607843137255),
           ),
         )
       ],

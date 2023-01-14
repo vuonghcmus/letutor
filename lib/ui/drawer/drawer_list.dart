@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../config/app_pages.dart';
 import '../../constants/title_string.dart';
-import '../../resources/gen/assets.gen.dart';
 import '../../widgets/app_bar/app_bar_custom.dart';
 import '../common/circle_box.dart';
 import '../common/image_network_component.dart';
@@ -37,12 +33,12 @@ class DrawerList extends GetWidget<DrawerListController> {
                           child: ImageNetworkComponent(
                             url: controller.user.value?.avatar ?? '',
                           )),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       Text(
                         controller.user.value?.name ?? TitleString.noName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                         ),
