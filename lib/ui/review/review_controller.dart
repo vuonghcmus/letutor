@@ -13,13 +13,14 @@ class ReviewController extends BaseController {
   String tutorId = '';
   RxList<Review> reviews = <Review>[].obs;
   RxBool isLoading = true.obs;
+  RxInt pageSelected = 0.obs;
+  RxInt totalPage = 7.obs;
 
   @override
   void onInit() {
     super.onInit();
     tutorId = Get.arguments['id'];
     getData(page: 1);
-    print(reviews);
     isLoading = false.obs;
   }
 
@@ -30,8 +31,10 @@ class ReviewController extends BaseController {
       reviews.value = (data == null)
           ? []
           : (data as List).map((e) => Review.fromJson(e)).toList();
+      int total = res['data']['count'];
+      totalPage = (total ~/ 10 + 1).obs;
     } catch (e) {
-      print(e);
+      e.printError();
     }
   }
 }
