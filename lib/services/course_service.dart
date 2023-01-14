@@ -9,14 +9,15 @@ class CourseService extends BaseService {
     return response;
   }
 
-  Future<dynamic> getAllCourse({int page = 1, int type = 0}) async {
+  Future<dynamic> getAllCourse(
+      {int page = 1, int type = 0, String q = ''}) async {
     final response = await get(sprintf(
         type == 0
             ? API.ALL_COURSE
             : type == 1
-            ? API.ALL_E_BOOK
-            : API.ALL_I_E_BOOk,
-        [page]));
+                ? API.ALL_E_BOOK
+                : API.ALL_I_E_BOOk,
+        [page, q]));
     return response;
   }
 }

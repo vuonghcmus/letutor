@@ -26,6 +26,7 @@ class RestClient {
   }
 
   void setToken(String token) {
+    print(token);
     headers[ACCESS_TOKEN_HEADER] = "Bearer $token";
   }
 
