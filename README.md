@@ -15,4 +15,10 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-# Link video: https://drive.google.com/file/d/1iuuXYhyQcA_qflSPgc16Uvg_cg_b53at/view?usp=share_link
+# Link video:
+
+https://drive.google.com/file/d/1iuuXYhyQcA_qflSPgc16Uvg_cg_b53at/view?usp=share_link
+
+# Link gitlab:
+
+https://gitlab.com/vuonghcmus/letutor
