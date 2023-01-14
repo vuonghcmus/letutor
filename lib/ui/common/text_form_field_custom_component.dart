@@ -6,18 +6,18 @@ import '../../resources/font/font_text.dart';
 
 TextFormField TextFormFieldCustomComponent(
     {required Function(String) onChanged,
-    required TextEditingController? controller,
-    required String hintText,
-    void Function()? onTap,
-    bool readOnly = false,
-    bool isObscure = false,
-    bool isPhone = false,
-    bool isHaveBorder = true,
-    int maxLine = 1,
-    int? maxLength,
-    Widget? icon,
-    double radius = 5.0,
-    FormFieldValidator<String>? validator}) {
+      required TextEditingController? controller,
+      required String hintText,
+      void Function()? onTap,
+      bool readOnly = false,
+      bool isObscure = false,
+      bool isPhone = false,
+      bool isHaveBorder = true,
+      int maxLine = 1,
+      int? maxLength,
+      Widget? icon,
+      double radius = 5.0,
+      FormFieldValidator<String>? validator}) {
   return TextFormField(
     onTap: onTap,
     readOnly: readOnly,
@@ -42,10 +42,12 @@ TextFormField TextFormFieldCustomComponent(
       hintText: hintText,
       suffixIcon: icon,
       focusedBorder: isHaveBorder
-          ? underLineInputBorder(width: 2, color: Colors.grey, radius: radius)
+          ? underLineInputBorder(
+          width: 2, color: Colors.grey, radius: radius)
           : null,
       enabledBorder: isHaveBorder
-          ? underLineInputBorder(width: 2, color: Colors.grey, radius: radius)
+          ? underLineInputBorder(
+          width: 2, color: Colors.grey, radius: radius)
           : null,
       // contentPadding: isHaveBorder
       //     ? EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h)
