@@ -6,27 +6,30 @@ import 'package:get/get.dart';
 import 'package:letutor/services/tutor_services.dart';
 
 import '../../config/app_storage.dart';
+import '../../constants/api_constants.dart';
 import '../../models/user_model.dart';
 import '../../resources/languages/localization_service.dart';
 import '../../resources/theme/app_theme.dart';
 import '../../resources/theme/theme_service.dart';
+import '../../services/become_teacher_services.dart';
 import '../../services/course_service.dart';
 import '../../services/rest_client.dart';
 import '../../services/user_services.dart';
 
 class AppController extends GetxController {
+
+  Environment? env;
   late Rx<Locale?> locale;
   late Rx<ThemeData?> themeData;
   final Rx<UserModel?> userModel = UserModel(birthday: DateTime(1990)).obs;
   final Rx<AuthState> authState = AuthState.unauthorized.obs;
 
-  init() async {
+  init(Environment environment) async {
+    env = environment;
     await Future.wait([initStorage()]);
     final appStorage = Get.find<AppStorage>();
 
     setupApp();
-    // await initTheme(appStorage);
-
     await initLanguage();
     await initApi(null);
   }
@@ -51,8 +54,16 @@ class AppController extends GetxController {
   }
 
   initApi(String? accessToken) async {
-    String baseUrl = 'https://sandbox.api.lettutor.com/';
+    String baseUrl;
     // init api
+    switch (env!) {
+      case Environment.prod:
+        baseUrl = API.BASE_URL_PRO;
+        break;
+      case Environment.dev:
+        baseUrl = API.BASE_URL_DEV;
+        break;
+    }
     RestClient.instance.init(baseUrl, accessToken: accessToken ?? "");
   }
 
@@ -60,6 +71,7 @@ class AppController extends GetxController {
     Get.put(UserService());
     Get.put(TutorService());
     Get.put(CourseService());
+    Get.put(BecomeTeacherServices());
   }
 
   logout() async {
@@ -70,21 +82,8 @@ class AppController extends GetxController {
   }
 
 
-// Future<void> initTheme(AppStorage storage) async {
-  //   await Get.put(ThemeService()).init(storage);
-  //   final themeService = Get.find<ThemeService>();
-  //   themeData = themeService.themeData.obs;
-  //
-  //   // Listen to the change of Theme
-  //   storage.box.listenKey(AppStorage.APP_THEME, (value) {
-  //     if (value != null) {
-  //       themeData.value = appThemeData[themeService.getAppTheme(value)];
-  //     } else {
-  //       themeData = appThemeData[themeService.getAppTheme(value)].obs;
-  //     }
-  //   });
-  // }
-
 }
 
 enum AuthState { unauthorized, authorized }
+
+enum Environment { dev, prod }

@@ -8,11 +8,9 @@ class TextIconComponent extends StatelessWidget {
   IconData iconData;
   Color? color;
 
-  TextIconComponent({
-    Key? key,
-    required this.title,
-    required this.iconData,
-  }) : super(key: key);
+  TextIconComponent(
+      {Key? key, required this.title, required this.iconData, this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,9 @@ class TextIconComponent extends StatelessWidget {
         ),
         Text(
           title,
-          style: text16.copyWith(color: Colors.blue),
+          style: text16.copyWith(
+            color: color ?? Colors.blue,
+          ),
         )
       ],
     );

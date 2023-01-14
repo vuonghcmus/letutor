@@ -13,7 +13,10 @@ class ChangePassword extends GetWidget<ChangePasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+      appBar: AppBarCustom(
+        isHaveDrawer: controller.isHaveDrawer,
+        controller: controller,
+      ),
       body: Center(
         child: Container(
           child: ListView(
@@ -24,7 +27,6 @@ class ChangePassword extends GetWidget<ChangePasswordController> {
                     color: Colors.black, fontWeight: FontWeight.w700),
               ),
               TextFieldAreaComponent(
-
                   text: TitleString.currentPassword,
                   textHint: '',
                   isPassword: true),
