@@ -12,7 +12,6 @@ class HistoryPageController extends BaseController {
   void onInit() {
     super.onInit();
     getData(page: 1);
-    print(schedules);
   }
 
   void getData({page = 1}) async {
