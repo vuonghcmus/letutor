@@ -14,17 +14,23 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/icon_smiles.png
+  AssetGenImage get iconSmiles => const AssetGenImage('assets/images/icon_smiles.png');
+
   /// File path: assets/images/login.png
   AssetGenImage get login => const AssetGenImage('assets/images/login.png');
 
   /// File path: assets/images/not_found_images.png
   AssetGenImage get notFoundImages => const AssetGenImage('assets/images/not_found_images.png');
 
+  /// File path: assets/images/people.png
+  AssetGenImage get people => const AssetGenImage('assets/images/people.png');
+
   /// File path: assets/images/vietnam.png
   AssetGenImage get vietnam => const AssetGenImage('assets/images/vietnam.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [login, notFoundImages, vietnam];
+  List<AssetGenImage> get values => [iconSmiles, login, notFoundImages, people, vietnam];
 }
 
 class $AssetsSvgGen {
@@ -35,6 +41,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/course.svg
   SvgGenImage get course => const SvgGenImage('assets/svg/course.svg');
+
+  /// File path: assets/svg/english.svg
+  SvgGenImage get english => const SvgGenImage('assets/svg/english.svg');
 
   /// File path: assets/svg/facebook_logo.svg
   SvgGenImage get facebookLogo => const SvgGenImage('assets/svg/facebook_logo.svg');
@@ -58,7 +67,7 @@ class $AssetsSvgGen {
   SvgGenImage get vietnam => const SvgGenImage('assets/svg/vietnam.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [calendarCheck, course, facebookLogo, googleLogo, historyLogo, iconsMenu, lettutorLogo, mobileLogo, vietnam];
+  List<SvgGenImage> get values => [calendarCheck, course, english, facebookLogo, googleLogo, historyLogo, iconsMenu, lettutorLogo, mobileLogo, vietnam];
 }
 
 class Assets {

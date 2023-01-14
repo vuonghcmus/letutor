@@ -9,6 +9,7 @@ class Schedule {
   String tutorId;
   String startTime;
   String endTime;
+  String studentMeetingLink;
 
   int startTimestamp;
   int endTimestamp;
@@ -21,6 +22,7 @@ class Schedule {
   Schedule? scheduleDetailInfo;
   Schedule? scheduleInfo;
   List<Feedback?> feedbacks;
+  List<Schedule> scheduleDetails;
 
   Schedule(
       {this.id = '',
@@ -37,7 +39,9 @@ class Schedule {
       this.tutorInfo,
       this.scheduleDetailInfo,
       this.scheduleInfo,
-      this.feedbacks = const []});
+      this.feedbacks = const [],
+      this.scheduleDetails = const [],
+      this.studentMeetingLink = ''});
 
   factory Schedule.fromJson(json) {
     return Schedule(
@@ -47,6 +51,7 @@ class Schedule {
       endTime: json['endTime'] ?? '',
       startTimestamp: json['startTimestamp'] ?? 0,
       endTimestamp: json['endTimestamp'] ?? 0,
+      studentMeetingLink: json['studentMeetingLink'] ?? '',
       isBooked: json['isBooked'] ?? false,
       showRecordUrl: json['showRecordUrl'] ?? false,
       createdAt: json['createdAt'] != null
@@ -66,6 +71,11 @@ class Schedule {
       feedbacks: json['feedbacks'] != null
           ? json['feedbacks']
               .map<Feedback>((e) => Feedback.fromJson(e))
+              .toList()
+          : [],
+      scheduleDetails: json['scheduleDetails'] != null
+          ? (json['scheduleDetails'] as List)
+              .map((e) => Schedule.fromJson(e))
               .toList()
           : [],
     );

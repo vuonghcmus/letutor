@@ -41,7 +41,6 @@ class LocalizationService extends Translations {
     await appStorage.setLanguage(value);
     if (getLocale != null) {
       Get.updateLocale(getLocale!);
-
     }
   }
 }
