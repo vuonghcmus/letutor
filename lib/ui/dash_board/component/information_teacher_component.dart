@@ -31,130 +31,146 @@ class InformationTeacherComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 3),
-          child: BoxShadowComponent(
-              padding: EdgeInsets.all(30),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              width: Get.width - 20 - 6,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    child: CircleBox(
-                      size: 80,
-                      child: ImageNetworkComponent(
-                        url: tutor.user?.avatar ?? '',
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    tutor.user?.name ?? '',
-                    style: text20.copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
+        Stack(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 3),
+              child: BoxShadowComponent(
+                  padding: EdgeInsets.all(30),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  width: Get.width - 20 - 6,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Assets.svg.vietnam.svg(height: 15, width: 25),
-                      SizedBox(width: 15),
-                      Text(
-                        tutor.user?.country ?? '',
-                        style: text16,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  countRating == 0
-                      ? Text(
-                          TitleString.dashBoardNoReview,
-                          style: text16.copyWith(color: Colors.grey),
-                        )
-                      : RatingBar.builder(
-                          initialRating: countRating,
-                          minRating: countRating,
-                          maxRating: countRating,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemSize: 20,
-                          itemPadding:
-                              const EdgeInsets.symmetric(horizontal: 4.0),
-                          itemBuilder: (context, _) => const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                            size: 5,
+                      Center(
+                        child: CircleBox(
+                          size: 80,
+                          child: ImageNetworkComponent(
+                            url: tutor.user?.avatar ?? '',
                           ),
-                          onRatingUpdate: (rating) {},
-                        ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Wrap(
-                    spacing: 5,
-                    runSpacing: 10,
-                    children: [
-                      ...tutor.specialties
-                          .split(",")
-                          .map((e) => TextContainerComponent(
-                                title: e,
-                                textColor: Colors.indigo,
-                                color: Colors.cyan,
-                              ))
-                          .toList()
-                    ],
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    tutor.bio,
-                    maxLines: 4,
-                    overflow: TextOverflow.ellipsis,
-                    style: text16.copyWith(color: Colors.black),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: SizedBox(
-                      width: Get.width / 2 - 30,
-                      child: TextButton(
-                        onPressed: () {
-                          controller.navigateTutorDetail(tutor);
-
-                        },
-                        child: TextContainerComponent(
-                          title: TitleString.book,
-                          textColor: Colors.indigo,
-                          color: Colors.cyan,
                         ),
                       ),
-                    ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        tutor.user?.name ?? '',
+                        style: text20.copyWith(fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Assets.svg.vietnam.svg(height: 15, width: 25),
+                          SizedBox(width: 15),
+                          Text(
+                            tutor.user?.country ?? '',
+                            style: text16,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      countRating == 0
+                          ? Text(
+                              TitleString.dashBoardNoReview,
+                              style: text16.copyWith(color: Colors.grey),
+                            )
+                          : RatingBar.builder(
+                              initialRating: countRating,
+                              minRating: countRating,
+                              maxRating: countRating,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemSize: 20,
+                              itemPadding:
+                                  const EdgeInsets.symmetric(horizontal: 4.0),
+                              itemBuilder: (context, _) => const Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                                size: 5,
+                              ),
+                              onRatingUpdate: (rating) {},
+                            ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Wrap(
+                        spacing: 5,
+                        runSpacing: 10,
+                        children: [
+                          ...tutor.specialties
+                              .split(",")
+                              .map((e) => TextContainerComponent(
+                                    title: e,
+                                    textColor: Colors.indigo,
+                                    color: Colors.cyan,
+                                  ))
+                              .toList()
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        tutor.bio,
+                        maxLines: 4,
+                        overflow: TextOverflow.ellipsis,
+                        style: text16.copyWith(color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: SizedBox(
+                          width: Get.width / 2 - 30,
+                          child: TextButton(
+                            onPressed: () {
+                              controller.navigateTutorDetail(tutor);
+                            },
+                            child: TextContainerComponent(
+                              title: TitleString.book,
+                              textColor: Colors.indigo,
+                              color: Colors.cyan,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                    ],
+                  )),
+            ),
+            Obx(
+              () => Positioned(
+                right: 30,
+                top: 30,
+                child: IconButton(
+                  onPressed: () {
+                    controller.manageListFavouriteTutor(tutor.userId);
+                    controller.manageTeacherFavorite(tutor.userId);
+                  },
+                  icon: Icon(
+                    Icons.favorite,
+                    color: controller.favouriteTutor(tutor.userId)
+                        ? Colors.red
+                        : Colors.grey,
                   ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                ],
-              )),
+                ),
+              ),
+            ),
+          ],
         ),
-        Positioned(
-            right: 30,
-            top: 30,
-            child: const Icon(
-              Icons.favorite,
-              color: Colors.red,
-              size: 25,
-            ))
+        SizedBox(
+          height: 15,
+        ),
       ],
     );
   }

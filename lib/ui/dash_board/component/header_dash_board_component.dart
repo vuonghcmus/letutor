@@ -5,17 +5,20 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:letutor/config/app_pages.dart';
 
 import '../../../constants/title_string.dart';
+import '../../../models/schedule.dart';
 import '../../../resources/font/font_text.dart';
+import '../../meeting/video_meeting.dart';
 import '../dash_board_list_controller.dart';
 import 'package:intl/intl.dart';
 
 class HeaderDashBoardComponent extends StatelessWidget {
-  // final controller = Get.find<DashBoardListController>();
+
   final DashBoardListController controller;
+  final List<Schedule> schedules;
 
   HeaderDashBoardComponent({
     Key? key,
-    required this.controller,
+    required this.controller, required this.schedules,
   }) : super(key: key);
 
   @override
@@ -50,7 +53,9 @@ class HeaderDashBoardComponent extends StatelessWidget {
               ),
               Obx(
                 () => Text(
-                  '(còn ' + controller.upComming.value + ')',
+                  controller.upComming.value != ''
+                      ? '(còn ' + controller.upComming.value + ')'
+                      : '',
                   style: text16.copyWith(color: Colors.amber),
                 ),
               ),
@@ -73,7 +78,13 @@ class HeaderDashBoardComponent extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: TextButton(
               onPressed: () {
-                Get.toNamed(AppRoutes.SCHEDULE);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => VideoMeeting(
+                          studentMeetingLink:
+                          schedules[0].studentMeetingLink)),
+                );
               },
               child: Text(TitleString.dashBoardEnterRoom),
             ),
