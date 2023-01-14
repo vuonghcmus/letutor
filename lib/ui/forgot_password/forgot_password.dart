@@ -19,7 +19,10 @@ class ForgotPassword extends GetWidget<ForgotPasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+        appBar: AppBarCustom(
+          isHaveDrawer: controller.isHaveDrawer,
+          controller: controller,
+        ),
         body: Center(
           child: ListView(
             shrinkWrap: true,

@@ -1,8 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../config/app_pages.dart';
 import '../../constants/title_string.dart';
+import '../../resources/gen/assets.gen.dart';
 import '../../widgets/app_bar/app_bar_custom.dart';
 import '../common/circle_box.dart';
 import '../common/image_network_component.dart';
@@ -15,7 +19,7 @@ class DrawerList extends GetWidget<DrawerListController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer, controller: controller,),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -33,12 +37,12 @@ class DrawerList extends GetWidget<DrawerListController> {
                           child: ImageNetworkComponent(
                             url: controller.user.value?.avatar ?? '',
                           )),
-                      const SizedBox(
+                      SizedBox(
                         width: 15,
                       ),
                       Text(
                         controller.user.value?.name ?? TitleString.noName,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                         ),
@@ -76,7 +80,7 @@ class DrawerList extends GetWidget<DrawerListController> {
               ListTitleComponent(
                   iconData: Icons.school_rounded,
                   title: TitleString.registerBecomeTeacher,
-                  named: ''),
+                  named: AppRoutes.BECOME_TEACHER),
               ListTitleComponent(
                   iconData: Icons.logout,
                   title: TitleString.logOut,

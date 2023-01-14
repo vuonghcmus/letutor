@@ -12,29 +12,32 @@ class HistoryPage extends GetWidget<HistoryPageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer, controller: controller,),
       body: SingleChildScrollView(
         child: Obx(
-          () => Column(
-            children: [
-              HeaderHistoryComponent(),
-              SizedBox(
-                height: 20,
-              ),
-              ...controller.schedules.map(
-                (element) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    HistoryItemComponent(
-                      schedule: element,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                  ],
+          () => Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                HeaderHistoryComponent(),
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-            ],
+                ...controller.schedules.map(
+                  (element) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      HistoryItemComponent(
+                        schedule: element,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
