@@ -7,17 +7,23 @@ import '../../../constants/title_string.dart';
 import '../../../models/schedule.dart';
 import '../../../resources/font/font_text.dart';
 import '../../common/box_shadow_component.dart';
+import '../teacher_detail_controller.dart';
 
 class BookingCourseComponent extends StatelessWidget {
   String date;
   String time;
   bool isDisable;
+  bool isBooked;
+  Schedule schedule;
+  final controller = Get.find<TeacherDetailController>();
 
   BookingCourseComponent({
     Key? key,
     required this.date,
     required this.time,
     this.isDisable = false,
+    this.isBooked = false,
+    required this.schedule,
   }) : super(key: key);
 
   @override
@@ -46,8 +52,13 @@ class BookingCourseComponent extends StatelessWidget {
               SizedBox(
                 width: 100,
                 height: 30,
-                child:
-                    TextButton(onPressed: () {}, child: Text(TitleString.book)),
+                child: !isBooked && !isDisable
+                    ? TextButton(
+                        onPressed: () {
+                          controller.book(schedule.scheduleDetails[0].id);
+                        }, child: Text(TitleString.book))
+                    : TextButton(
+                        onPressed: () {}, child: Text("Đã được đặt")),
               ),
             ],
           ),

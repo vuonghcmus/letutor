@@ -19,7 +19,7 @@ class HeaderHistoryComponent extends StatelessWidget {
             children: [
               Text(
                 TitleString.historySchedule,
-                style: text26.copyWith(fontWeight: FontWeight.w700),
+                style: text20.copyWith(fontWeight: FontWeight.w700),
               ),
               SizedBox(
                 height: 15,
