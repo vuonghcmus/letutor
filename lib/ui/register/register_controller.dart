@@ -9,7 +9,8 @@ import '../../utils/validation.dart';
 import '../../widgets/notify/notify_bar.dart';
 import '../base/base_controller.dart';
 
-class RegisterController extends BaseController {
+class RegisterController extends BaseController{
+
   final _userService = Get.find<UserService>();
 
   final Map<String, TextEditingController> controllers = Map.fromEntries(
@@ -17,7 +18,7 @@ class RegisterController extends BaseController {
       emailField,
       passwordField,
     ].map(
-      (value) => MapEntry(
+          (value) => MapEntry(
         value,
         TextEditingController(),
       ),
@@ -30,7 +31,7 @@ class RegisterController extends BaseController {
     isHaveDrawer = false;
   }
 
-  void register() async {
+  void register() async{
     print(controllers[emailField]!.text);
     print(controllers[passwordField]!.text);
     validatorEmpty(controllers.values.toList());
