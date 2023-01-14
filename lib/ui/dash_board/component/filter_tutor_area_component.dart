@@ -10,6 +10,7 @@ import '../../../constants/constants.dart';
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../common/text_container_component.dart';
+import '../../common/text_field_area_component.dart';
 import '../../common/text_form_field_custom_component.dart';
 import '../dash_board_list_controller.dart';
 
