@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:letutor/ui/login/login_controller.dart';
+import 'package:letutor/ui/register/register_controller.dart';
 
 import '../../../config/app_pages.dart';
 import '../../../constants/title_string.dart';
 import '../../../resources/font/font_text.dart';
 import '../../../resources/gen/assets.gen.dart';
 
-class SubLoginComponent extends StatelessWidget {
+class SubRegisterComponent extends StatelessWidget {
   final double sizeIcon = 40;
-  final LoginController controller;
+  final RegisterController controller;
 
-  const SubLoginComponent(
+  const SubRegisterComponent(
       {Key? key, required this.titleBottom, required this.controller})
       : super(key: key);
 
@@ -37,20 +38,9 @@ class SubLoginComponent extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {
-                controller.handleLogin(LoginType.facebook);
-              },
-              child: Assets.svg.facebookLogo
-                  .svg(width: sizeIcon, height: sizeIcon),
-            ),
+            Assets.svg.facebookLogo.svg(width: sizeIcon, height: sizeIcon),
             const SizedBox(width: 40),
-            InkWell(
-                onTap: () {
-                  controller.handleLogin(LoginType.google);
-                },
-                child: Assets.svg.googleLogo
-                    .svg(width: sizeIcon, height: sizeIcon)),
+            Assets.svg.googleLogo.svg(width: sizeIcon, height: sizeIcon),
             const SizedBox(width: 40),
             Assets.svg.mobileLogo.svg(width: sizeIcon, height: sizeIcon),
           ],

@@ -10,7 +10,7 @@ import '../../../constants/title_string.dart';
 import '../login_controller.dart';
 
 class LoginComponent extends StatelessWidget {
-  late LoginController loginController;
+  final LoginController loginController;
 
   LoginComponent(
       {Key? key,
@@ -36,11 +36,22 @@ class LoginComponent extends StatelessWidget {
             text: titleFormEmail,
             textHint: titleHintEmail),
         const SizedBox(height: 20),
-        TextFieldAreaComponent(
-            controller: loginController.controllers[passwordField],
-            text: titleFormPassword,
-            textHint: titleHintPassword,
-            isPassword: true),
+        Obx(
+          () => TextFieldAreaComponent(
+              controller: loginController.controllers[passwordField],
+              text: titleFormPassword,
+              textHint: titleHintPassword,
+              isPassword: loginController.showPassword.value,
+              icon: IconButton(
+                onPressed: () {
+                  loginController.showPassword.value =
+                      !loginController.showPassword.value;
+                },
+                icon: Icon(
+                  loginController.showPassword.value ? Icons.visibility : Icons.visibility_off,
+                ),
+              )),
+        ),
         InkWell(
           onTap: () => {
             Get.toNamed(AppRoutes.FORGOT_PASSWORD),
@@ -55,7 +66,6 @@ class LoginComponent extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)))),
-            // onPressed: () => {Get.toNamed(AppRoutes.DASH_BOARD_LIST)},
             onPressed: () => {loginController.login()},
             child:
                 Text(titleButton, style: const TextStyle(color: Colors.white)))

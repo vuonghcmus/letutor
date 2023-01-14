@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/title_string.dart';
@@ -14,19 +15,19 @@ class HeaderProfileComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           LogoProfileComponent(),
           Text(
-            controller.user.value.name,
+            controller.user.value.name ?? '',
             style: text28.copyWith(
                 color: const Color.fromRGBO(36, 38, 38, 1.0),
                 fontWeight: FontWeight.w700),
           ),
           Text(
-            controller.user.value.id,
+            controller.user.value.id ?? '',
             style: text28.copyWith(
                 color: Colors.grey, fontWeight: FontWeight.w700),
           ),

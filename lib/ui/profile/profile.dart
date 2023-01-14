@@ -14,7 +14,7 @@ class Profile extends GetWidget<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer, controller: controller,),
       body: Center(
         child: Obx(
           () => SingleChildScrollView(

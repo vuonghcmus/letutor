@@ -19,7 +19,7 @@ class Login extends GetWidget<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer, controller: controller,),
       body: ListView(
         children: <Widget>[
           Assets.images.login.image(),
@@ -54,7 +54,7 @@ class Login extends GetWidget<LoginController> {
                 textAlign: TextAlign.left,
               ),
             ),
-          ]),
+          ], controller: controller,),
         ],
       ),
     );

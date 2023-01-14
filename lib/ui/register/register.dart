@@ -14,6 +14,7 @@ import '../../widgets/app_bar/app_bar_custom.dart';
 import '../login/component/login_title_component.dart';
 import '../login/component/sub_login_component.dart';
 import 'component/register_component.dart';
+import 'component/sub_register_component.dart';
 
 class Register extends GetWidget<RegisterController> {
   const Register({super.key});
@@ -21,7 +22,7 @@ class Register extends GetWidget<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer),
+      appBar: AppBarCustom(isHaveDrawer: controller.isHaveDrawer, controller: controller,),
       body: ListView(
         children: <Widget>[
           Assets.images.login.image(),
@@ -31,8 +32,10 @@ class Register extends GetWidget<RegisterController> {
             titleFormEmail: TitleString.loginFormEmail,
             titleHintEmail: TitleString.loginFormHintEmail,
             titleFormPassword: TitleString.loginFormPassword,
-            titleHintPassword: TitleString.loginFormHintPassword, registerController: controller,),
-          SubLoginComponent(titleBottom: [
+            titleHintPassword: TitleString.loginFormHintPassword,
+            registerController: controller,
+          ),
+          SubRegisterComponent(controller: controller, titleBottom: [
             Text(
               TitleString.haveAccount,
               style: text14.copyWith(
