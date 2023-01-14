@@ -5,7 +5,7 @@ import '../utils/date_time.dart';
 import 'review.dart';
 
 class Tutor {
-  double rating;
+  num rating;
   int price;
   int totalFeedback;
   String userId;
@@ -96,7 +96,7 @@ class Tutor {
       isFavorite: json['isFavorite'] ?? false,
       user: UserModel.fromJson(json),
       userModel:
-      (json['User'] == null) ? null : UserModel.fromJson(json['User']),
+          (json['User'] == null) ? null : UserModel.fromJson(json['User']),
       createdAt: json['createdAt'] != null
           ? DateFormat(time1).parse(json['createdAt'])
           : DateTime(1990),
@@ -111,10 +111,7 @@ class Tutor {
           : (json['studentGroupId'] as List).map((e) => e.toString()).toList(),
       feedbacks: json['feedbacks'] == null
           ? []
-          : (json['feedbacks'] as List)
-          .map((e) => Review.fromJson(e))
-          .toList(),
-
+          : (json['feedbacks'] as List).map((e) => Review.fromJson(e)).toList(),
     );
   }
 }
